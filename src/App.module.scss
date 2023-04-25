@@ -1,0 +1,54 @@
+.app {
+  & > .header {
+    position: sticky;
+    top: 0;
+    background-color: #fbfbfd;
+    width: 100%;
+    z-index: 100;
+  }
+  & > .bgWrapper {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(0.2rem);
+    z-index: 98;
+    display: none;
+
+    &.open {
+      display: block;
+    }
+  }
+  & > .sidebar {
+    position: fixed;
+    width: 250px;
+    background: rgb(24, 173, 144);
+    background: linear-gradient(
+      177deg,
+      rgba(24, 173, 144, 1) 0%,
+      rgba(148, 200, 64, 1) 100%
+    );
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: width 100ms;
+    left: 0;
+    top: 6.4rem;
+    height: calc(100vh - 6.4rem);
+    z-index: 99;
+  }
+  & > .content {
+    padding-left: 250px;
+    transition: padding 100ms;
+  }
+}
+@media screen and (max-width: 990px) {
+  .app {
+    & > .content {
+      padding-left: 0px;
+    }
+  }
+}
